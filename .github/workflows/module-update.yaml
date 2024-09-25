@@ -1,0 +1,13 @@
+
+name: Check and update ArgoCD Helm chart version
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
