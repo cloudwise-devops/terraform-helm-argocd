@@ -102,8 +102,8 @@ jobs:
     - name: Push changes and tags
       if: env.update_version == 'true'
       run: |
-        # Push both the commit and the tags to the master branch
-        git push origin master
-        git push origin master --tags
+        # Push both the commit and the tags to the main branch
+        git push origin main
+        git push origin main --tags
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
