@@ -35,3 +35,20 @@ resource "helm_release" "argocd" {
     value = var.argo_cd_image_global_version
   }
 }
+
+resource "google_project_iam_member" "storage_access_for_sa" {
+  project = var.storage_project
+  role    = "roles/storage.objectViewer"
+  member  = "serviceAccount:${module.my-app-workload-identity.gcp_service_account_email}"
+}
+
+module "my-app-workload-identity" {
+  source                          = "terraform-google-modules/kubernetes-engine/google//modules/workload-identity"
+  version                         = "30.2.0"
+  use_existing_gcp_sa             = false
+  name                            = "${var.argo_cd_namespace_name}-${var.env}"
+  project_id                      = var.gce_project
+  use_existing_k8s_sa             = false
+  namespace                       = kubernetes_namespace.argocd.metadata.0.name
+  automount_service_account_token = true
+}

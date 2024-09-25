@@ -27,6 +27,18 @@ variable "argo_cd_image_global_version" {
   default = "v2.11.0"
 }
 
+variable "env" {
+  default = "dev"
+}
+
+variable "gce_project" {
+  default = "<your-project>"
+}
+
+variable "storage_project" {
+  default = "<your-storage-project>"
+}
+
 variable "argo_cd_chart_version" {
   default     = "6.8.0"
   description = "https://artifacthub.io/packages/helm/argo/argo-cd"
