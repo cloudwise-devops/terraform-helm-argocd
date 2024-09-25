@@ -42,3 +42,40 @@ jobs:
         echo "Latest ArgoCD App version: $latest_app_version"
         echo "latest_chart_version=$latest_chart_version" >> $GITHUB_ENV
         echo "latest_app_version=$latest_app_version" >> $GITHUB_ENV
+
+    - name: Update version in variables.tf if necessary
+      id: compare_versions
+      run: |
+        terraform plan -out=tfplan
+        terraform show -json tfplan > plan.json
+        
+        current_chart_version=$(jq -r '.variables.argo_cd_chart_version.value' plan.json)
+        latest_chart_version="${{ env.latest_chart_version }}"
+        current_app_version=$(jq -r '.variables.argo_cd_image_global_version.value' plan.json)
+        latest_app_version="${{ env.latest_app_version }}"
+        
+        echo "Current Helm chart version: $current_chart_version"
+        echo "Latest Helm chart version: $latest_chart_version"
+        echo "Current App version: $current_app_version"
+        echo "Latest App version: $latest_app_version"
+        
+        echo "update_version=false" >> $GITHUB_ENV
+        cat variables.tf | grep -A 4 -B 4 argo_cd_chart_version
+        
+        if [[ "$latest_chart_version" != "$current_chart_version" || "$latest_app_version" != "$current_app_version" ]]; then
+          echo "update_version=true" >> $GITHUB_ENV
+          if [[ "$latest_chart_version" != "$current_chart_version" ]]; then
+            echo "Updating Helm chart to $latest_chart_version"
+            sed -i "s/$current_chart_version/$latest_chart_version/" variables.tf
+          fi
+          
+          if [[ "$latest_app_version" != "$current_app_version" ]]; then
+            echo "Updating App to $latest_app_version"
+            sed -i "s/$current_app_version/$latest_app_version/" variables.tf
+          fi
+
+        else
+          echo "Already up-to-date"
+        fi
+
+        cat variables.tf | grep -A 4 -B 4 argo_cd_chart_version
