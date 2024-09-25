@@ -97,7 +97,7 @@ jobs:
         git config --local user.email "actions@github.com"
         git add .
         git status
-        git commit -m "Update module to nginx controller chart version - ${{ env.latest_version }}"
+        git commit -m "Update module to ArgoCD Helm chart version - ${{ env.latest_version }}"
 
     - name: Push changes and tags
       if: env.update_version == 'true'
