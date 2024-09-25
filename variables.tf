@@ -44,8 +44,18 @@ variable "argo_cd_chart_version" {
   description = "https://artifacthub.io/packages/helm/argo/argo-cd"
 }
 
-variable "github_secret" {}
-variable "github_key" {}
+variable "github_secret" {
+  description = "GitHub secret for accessing the repository"
+  type        = string
+  default     = null
+}
+
+variable "github_key" {
+  description = "GitHub key for accessing the repository"
+  type        = string
+  default     = null
+}
+
 variable "github_org" {
   default = "example-org"
 }

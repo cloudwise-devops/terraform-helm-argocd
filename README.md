@@ -37,9 +37,9 @@ No requirements.
 | <a name="input_argocd_ip_whitelist"></a> [argocd\_ip\_whitelist](#input\_argocd\_ip\_whitelist) | n/a | `string` | `"0.0.0.0/0"` | no |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | `"dev"` | no |
 | <a name="input_gce_project"></a> [gce\_project](#input\_gce\_project) | n/a | `string` | `"<your-project>"` | no |
-| <a name="input_github_key"></a> [github\_key](#input\_github\_key) | n/a | `any` | n/a | yes |
+| <a name="input_github_key"></a> [github\_key](#input\_github\_key) | GitHub key for accessing the repository | `string` | `null` | no |
 | <a name="input_github_org"></a> [github\_org](#input\_github\_org) | n/a | `string` | `"example-org"` | no |
-| <a name="input_github_secret"></a> [github\_secret](#input\_github\_secret) | n/a | `any` | n/a | yes |
+| <a name="input_github_secret"></a> [github\_secret](#input\_github\_secret) | GitHub secret for accessing the repository | `string` | `null` | no |
 | <a name="input_lets_encrypt_issuer_name"></a> [lets\_encrypt\_issuer\_name](#input\_lets\_encrypt\_issuer\_name) | n/a | `string` | `"<your-issuer>"` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | n/a | `string` | `"nginx"` | no |
 | <a name="input_storage_project"></a> [storage\_project](#input\_storage\_project) | n/a | `string` | `"<your-storage-project>"` | no |
