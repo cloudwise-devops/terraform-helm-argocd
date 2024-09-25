@@ -11,3 +11,34 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Format Terraform scripts
+      id: fmt
+      run: terraform fmt -check
+      continue-on-error: true
+
+    - name: Initialize Terraform
+      id: init
+      run: terraform init
+
+    - name: Validate Terraform scripts
+      id: validate
+      run: terraform validate -no-color
+
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -no-color
+      continue-on-error: true
+
+    - name: Get latest Helm chart version from ArtifactHub
+      id: get_latest_version
+      run: |
+        latest_chart_version=$(curl -s https://artifacthub.io/api/v1/packages/helm/argo/argo-cd | jq -r '.version')
+        latest_app_version=$(curl -s https://artifacthub.io/api/v1/packages/helm/argo/argo-cd | jq -r '.app_version')
+        echo "Latest ArgoCD Helm version: $latest_chart_version"
+        echo "Latest ArgoCD App version: $latest_app_version"
+        echo "latest_chart_version=$latest_chart_version" >> $GITHUB_ENV
+        echo "latest_app_version=$latest_app_version" >> $GITHUB_ENV
