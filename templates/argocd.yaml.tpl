@@ -86,7 +86,7 @@ server:
             - email
             - account
             orgs:
-            - name: ${organizations}
+            - name: ${github_org}
 
 configs:
   cm:
@@ -106,6 +106,6 @@ configs:
             - email
             - account
             orgs:
-            - name: ${organizations}
+            - name: ${github_org}
   rbac:
     policy.default: 'role:admin'

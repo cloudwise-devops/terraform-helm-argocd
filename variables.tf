@@ -1,3 +1,4 @@
+
 variable "nginx_ingress_class_name" {
   default = "nginx"
 }
@@ -33,3 +34,6 @@ variable "argo_cd_chart_version" {
 
 variable "github_secret" {}
 variable "github_key" {}
+variable "github_org" {
+  default = "example-org"
+}

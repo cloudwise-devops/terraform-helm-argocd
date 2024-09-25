@@ -26,7 +26,7 @@ resource "helm_release" "argocd" {
         service_acc_name      = module.my-app-workload-identity.k8s_service_account_name
         samlOrgSecret         = var.github_secret
         samlOrgClientId       = var.github_key
-
+        github_org            = var.github_org
       }
     )
   ]
