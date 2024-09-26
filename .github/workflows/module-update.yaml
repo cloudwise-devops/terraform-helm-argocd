@@ -103,6 +103,7 @@ jobs:
     - name: Push changes and tags
       if: env.update_version == 'true'
       run: |
+        git checkout main
         git push origin main
         git push origin main --tags
       env:
