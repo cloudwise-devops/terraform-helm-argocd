@@ -35,8 +35,16 @@ variable "gce_project" {
   default = "<your-project>"
 }
 
+variable "gce_location" {
+  default = "<your-location>"
+}
+
 variable "storage_project" {
   default = "<your-storage-project>"
+}
+
+variable "gke_cluster_name" {
+  default = "<your-cluster-name>"
 }
 
 variable "argo_cd_chart_version" {
