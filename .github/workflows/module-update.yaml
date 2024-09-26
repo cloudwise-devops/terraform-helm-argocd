@@ -1,19 +1,10 @@
 
 name: Check and update ArgoCD Helm chart version
 
-# on:
-#   schedule:
-#     - cron: '0 9 * * 1'
-# pull_request:
-#   types:
-#     - opened
-#     - reopened
-#     - synchronize
-#   branches:
-#     - main
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 9 * * 1'
+  workflow_dispatch:  # Allows manual trigger
 
 
 jobs:
