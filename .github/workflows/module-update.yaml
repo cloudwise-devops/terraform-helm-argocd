@@ -1,16 +1,19 @@
 
 name: Check and update ArgoCD Helm chart version
 
-on:
-  schedule:
-    - cron: '0 9 * * 1'
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-    branches:
-      - main
+# on:
+#   schedule:
+#     - cron: '0 9 * * 1'
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - reopened
+  #     - synchronize
+  #   branches:
+  #     - main
+  on:
+    schedule:
+      - cron: '*/5 * * * *'
 
 
 jobs:
@@ -94,9 +97,6 @@ jobs:
     - name: Commit changes
       if: env.update_version == 'true'   
       run: |
-        echo "GITHUB_REF: $GITHUB_REF"
-        echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF"
-        git checkout main
         git config --local user.name "GitHub Actions"
         git config --local user.email "actions@github.com"
         git add .
