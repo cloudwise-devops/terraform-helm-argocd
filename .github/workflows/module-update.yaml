@@ -47,7 +47,7 @@ jobs:
 
     - name: Initialize Terraform
       id: init
-      run: terraform init
+      run: terraform init -backend=false
 
     - name: Validate Terraform scripts
       id: validate
@@ -55,7 +55,7 @@ jobs:
 
     - name: Terraform Plan
       id: plan
-      run: terraform plan -no-color -backend=false
+      run: terraform plan -no-color
       continue-on-error: true
 
     - name: Get latest Helm chart version from ArtifactHub
