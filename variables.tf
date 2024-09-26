@@ -52,7 +52,7 @@ variable "google_region" {
 }
 
 variable "argo_cd_chart_version" {
-  default     = "6.8.0"
+  default     = "7.6.5"
   description = "https://artifacthub.io/packages/helm/argo/argo-cd"
 }
 
