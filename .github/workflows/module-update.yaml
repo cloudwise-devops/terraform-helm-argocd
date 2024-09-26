@@ -87,7 +87,7 @@ jobs:
       run: |
         IFS='.' read -r major minor patch <<< "${{ env.latest_tag }}"
         new_patch=$((patch + 1))
-        new_tag="v$major.$minor.$new_patch"
+        new_tag="$major.$minor.$new_patch"
         echo "New version: $new_tag"
         echo "new_tag=$new_tag" >> $GITHUB_ENV
 
