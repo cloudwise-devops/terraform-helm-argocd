@@ -23,23 +23,6 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
 
-    - name: Setup Google Cloud credentials. MOCK
-      run: |
-        echo '{
-          "type": "service_account",
-          "project_id": "mock-project-id",
-          "private_key_id": "mock-private-key-id",
-          "private_key": "-----BEGIN PRIVATE KEY-----\nMOCK_PRIVATE_KEY\n-----END PRIVATE KEY-----\n",
-          "client_email": "mock-email@mock-project.iam.gserviceaccount.com",
-          "client_id": "12345678901234567890",
-          "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-          "token_uri": "https://oauth2.googleapis.com/token",
-          "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-          "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mock-email%40mock-project.iam.gserviceaccount.com"
-        }' > /tmp/gcloud_credentials.json
-        export GOOGLE_CLOUD_KEYFILE_JSON=/tmp/gcloud_credentials.json
-      shell: bash
-
     - name: Format Terraform scripts
       id: fmt
       run: terraform fmt -check
@@ -47,16 +30,11 @@ jobs:
 
     - name: Initialize Terraform
       id: init
-      run: terraform init -backend=false
+      run: terraform initx
 
     - name: Validate Terraform scripts
       id: validate
       run: terraform validate -no-color
-
-    - name: Terraform Plan
-      id: plan
-      run: terraform plan -no-color
-      continue-on-error: true
 
     - name: Get latest Helm chart version from ArtifactHub
       id: get_latest_version
@@ -68,9 +46,7 @@ jobs:
     - name: Update version in variables.tf if necessary
       id: compare_versions
       run: |
-        terraform plan -out=tfplan
-        terraform show -json tfplan > plan.json
-        current_chart_version=$(jq -r '.variables.argo_cd_chart_version.value' plan.json)
+        current_chart_version=$($(cat variables.tf | grep argo_cd_chart_version -A 3 | grep default | awk -F'"' '{print $2}'))
         latest_chart_version="${{ env.latest_chart_version }}"
         echo "Current Helm chart version: $current_chart_version"
         echo "Latest Helm chart version: $latest_chart_version"
@@ -127,7 +103,6 @@ jobs:
     - name: Push changes and tags
       if: env.update_version == 'true'
       run: |
-        # Push both the commit and the tags to the main branch
         git push origin main
         git push origin main --tags
       env:
