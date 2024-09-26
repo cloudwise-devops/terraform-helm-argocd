@@ -30,7 +30,7 @@ jobs:
 
     - name: Initialize Terraform
       id: init
-      run: terraform initx
+      run: terraform init
 
     - name: Validate Terraform scripts
       id: validate
