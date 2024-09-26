@@ -23,6 +23,13 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
 
+    - name: Setup Google Cloud credentials. MOCK
+      run: |
+        # echo "${{ secrets.GCLOUD_CREDENTIALS }}" > $HOME/gcloud_credentials.json
+        echo "<mock-credentials>" > $HOME/gcloud_credentials.json
+        export GOOGLE_CLOUD_KEYFILE_JSON=$HOME/gcloud_credentials.json
+      shell: bash
+
     - name: Format Terraform scripts
       id: fmt
       run: terraform fmt -check
