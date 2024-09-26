@@ -32,7 +32,7 @@ variable "env" {
 }
 
 variable "gce_project" {
-  default = "<your-project>"
+  default = "mock-project-id"
 }
 
 variable "gce_zone" {
