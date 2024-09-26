@@ -35,8 +35,8 @@ variable "gce_project" {
   default = "<your-project>"
 }
 
-variable "gce_location" {
-  default = "<your-location>"
+variable "gce_zone" {
+  default = "<your-zone>"
 }
 
 variable "storage_project" {
@@ -45,6 +45,14 @@ variable "storage_project" {
 
 variable "gke_cluster_name" {
   default = "<your-cluster-name>"
+}
+
+variable "google_credentials" {
+  default = "~/gcloud_credentials.json"
+}
+
+variable "google_region" {
+  default = "<your-region>"
 }
 
 variable "argo_cd_chart_version" {

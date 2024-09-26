@@ -3,8 +3,14 @@ data "google_client_config" "default" {}
 
 data "google_container_cluster" "k8s" {
   name     = var.gke_cluster_name
-  location = var.gce_location
+  location = var.gce_zone
   project  = var.gce_project
+}
+
+provider "google" {
+  credentials = file(var.google_credentials)
+  project     = var.gce_project
+  region      = var.google_region
 }
 
 provider "kubernetes" {
