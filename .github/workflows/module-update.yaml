@@ -94,6 +94,9 @@ jobs:
     - name: Commit changes
       if: env.update_version == 'true'   
       run: |
+        echo "GITHUB_REF: $GITHUB_REF"
+        echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF"
+        git checkout main
         git config --local user.name "GitHub Actions"
         git config --local user.email "actions@github.com"
         git add .
@@ -103,7 +106,6 @@ jobs:
     - name: Push changes and tags
       if: env.update_version == 'true'
       run: |
-        git checkout main
         git push origin main
         git push origin main --tags
       env:
