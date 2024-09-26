@@ -46,7 +46,7 @@ jobs:
     - name: Update version in variables.tf if necessary
       id: compare_versions
       run: |
-        current_chart_version=$($(cat variables.tf | grep argo_cd_chart_version -A 3 | grep default | awk -F'"' '{print $2}'))
+        current_chart_version=$(cat variables.tf | grep argo_cd_chart_version -A 3 | grep default | awk -F'"' '{print $2}')
         latest_chart_version="${{ env.latest_chart_version }}"
         echo "Current Helm chart version: $current_chart_version"
         echo "Latest Helm chart version: $latest_chart_version"
