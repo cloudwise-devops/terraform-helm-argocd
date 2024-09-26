@@ -23,16 +23,12 @@ variable "argocd_ip_whitelist" {
   default = "0.0.0.0/0"
 }
 
-variable "argo_cd_image_global_version" {
-  default = "v2.11.0"
-}
-
 variable "env" {
   default = "dev"
 }
 
 variable "gce_project" {
-  default = "mock-project-id"
+  default = "<your-project>"
 }
 
 variable "gce_zone" {

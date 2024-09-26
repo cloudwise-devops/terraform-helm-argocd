@@ -30,10 +30,6 @@ resource "helm_release" "argocd" {
       }
     )
   ]
-  set {
-    name  = "global.image.tag"
-    value = var.argo_cd_image_global_version
-  }
 }
 
 resource "google_project_iam_member" "storage_access_for_sa" {
