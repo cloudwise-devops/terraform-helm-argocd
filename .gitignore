@@ -33,3 +33,4 @@ override.tf.json
 *.lock.hcl
 *tfplan*
 plan.json
+*.tar.gz

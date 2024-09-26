@@ -94,6 +94,11 @@ jobs:
         git status
         git commit -m "Update module to ArgoCD Helm chart version - ${{ env.latest_version }}"
 
+    - name: Tag the new version
+      if: env.update_version == 'true'
+      run: |
+        git tag ${{ env.new_tag }}
+
     - name: Push changes and tags
       if: env.update_version == 'true'
       run: |
