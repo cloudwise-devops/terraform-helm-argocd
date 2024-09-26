@@ -36,8 +36,8 @@ jobs:
           "token_uri": "https://oauth2.googleapis.com/token",
           "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
           "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mock-email%40mock-project.iam.gserviceaccount.com"
-        }' > $HOME/gcloud_credentials.json
-        export GOOGLE_CLOUD_KEYFILE_JSON=$HOME/gcloud_credentials.json
+        }' > /tmp/gcloud_credentials.json
+        export GOOGLE_CLOUD_KEYFILE_JSON=/tmp/gcloud_credentials.json
       shell: bash
 
     - name: Format Terraform scripts
@@ -55,7 +55,7 @@ jobs:
 
     - name: Terraform Plan
       id: plan
-      run: terraform plan -no-color
+      run: terraform plan -no-color -backend=false
       continue-on-error: true
 
     - name: Get latest Helm chart version from ArtifactHub
