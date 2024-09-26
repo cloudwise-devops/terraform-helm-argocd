@@ -1,9 +1,20 @@
 
 name: Check and update ArgoCD Helm chart version
 
-on:
-  schedule:
-    - cron: '0 9 * * 1'
+# on:
+#   schedule:
+#     - cron: '0 9 * * 1'
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - reopened
+  #     - synchronize
+  #   branches:
+  #     - main
+  on:
+    schedule:
+      - cron: '*/5 * * * *'
+
 
 jobs:
   check-version:
@@ -28,11 +39,6 @@ jobs:
       id: validate
       run: terraform validate -no-color
 
-    - name: Terraform Plan
-      id: plan
-      run: terraform plan -no-color
-      continue-on-error: true
-
     - name: Get latest Helm chart version from ArtifactHub
       id: get_latest_version
       run: |
@@ -43,9 +49,7 @@ jobs:
     - name: Update version in variables.tf if necessary
       id: compare_versions
       run: |
-        terraform plan -out=tfplan
-        terraform show -json tfplan > plan.json
-        current_chart_version=$(jq -r '.variables.argo_cd_chart_version.value' plan.json)
+        current_chart_version=$(cat variables.tf | grep argo_cd_chart_version -A 3 | grep default | awk -F'"' '{print $2}')
         latest_chart_version="${{ env.latest_chart_version }}"
         echo "Current Helm chart version: $current_chart_version"
         echo "Latest Helm chart version: $latest_chart_version"
@@ -86,7 +90,7 @@ jobs:
       run: |
         IFS='.' read -r major minor patch <<< "${{ env.latest_tag }}"
         new_patch=$((patch + 1))
-        new_tag="v$major.$minor.$new_patch"
+        new_tag="$major.$minor.$new_patch"
         echo "New version: $new_tag"
         echo "new_tag=$new_tag" >> $GITHUB_ENV
 
@@ -102,7 +106,6 @@ jobs:
     - name: Push changes and tags
       if: env.update_version == 'true'
       run: |
-        # Push both the commit and the tags to the main branch
         git push origin main
         git push origin main --tags
       env:

@@ -23,10 +23,6 @@ variable "argocd_ip_whitelist" {
   default = "0.0.0.0/0"
 }
 
-variable "argo_cd_image_global_version" {
-  default = "v2.11.0"
-}
-
 variable "env" {
   default = "dev"
 }
@@ -35,8 +31,24 @@ variable "gce_project" {
   default = "<your-project>"
 }
 
+variable "gce_zone" {
+  default = "<your-zone>"
+}
+
 variable "storage_project" {
   default = "<your-storage-project>"
+}
+
+variable "gke_cluster_name" {
+  default = "<your-cluster-name>"
+}
+
+variable "google_credentials" {
+  default = "/tmp/gcloud_credentials.json"
+}
+
+variable "google_region" {
+  default = "<your-region>"
 }
 
 variable "argo_cd_chart_version" {
@@ -44,8 +56,18 @@ variable "argo_cd_chart_version" {
   description = "https://artifacthub.io/packages/helm/argo/argo-cd"
 }
 
-variable "github_secret" {}
-variable "github_key" {}
+variable "github_secret" {
+  description = "GitHub secret for accessing the repository"
+  type        = string
+  default     = null
+}
+
+variable "github_key" {
+  description = "GitHub key for accessing the repository"
+  type        = string
+  default     = null
+}
+
 variable "github_org" {
   default = "example-org"
 }
