@@ -73,26 +73,12 @@ server:
   config:
     url: https://${subdomain}.${domain}
     statusbadge.enabled: "true"
-    dex.config: |
-      connectors:
-        - type: github
-          id: github
-          name: GitHub
-          config:
-            clientID: ${samlOrgClientId}
-            clientSecret: ${samlOrgSecret}
-            redirectURI: https://${subdomain}.${domain}/api/dex/callback
-            scopes:
-            - email
-            - account
-            orgs:
-            - name: ${github_org}
 
 configs:
   cm:
     url: https://${subdomain}.${domain}
     statusbadge.enabled: true
-    exec.enabled: true
+    exec.enabled: ${web_terminal}
     dex.config: |
       connectors:
         - type: github

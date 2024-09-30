@@ -27,6 +27,7 @@ resource "helm_release" "argocd" {
         samlOrgSecret         = var.github_secret
         samlOrgClientId       = var.github_key
         github_org            = var.github_org
+        web_terminal          = var.web_terminal
       }
     )
   ]

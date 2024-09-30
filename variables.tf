@@ -69,5 +69,13 @@ variable "github_key" {
 }
 
 variable "github_org" {
-  default = "example-org"
+  default     = "example-org"
+  type        = string
+  description = "Name of your organization as shown in the GitHub URL path"
+}
+
+variable "web_terminal" {
+  default     = false
+  type        = bool
+  description = "Whether to enable web terminal on ArgoCD console"
 }
