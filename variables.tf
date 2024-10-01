@@ -4,11 +4,11 @@ variable "nginx_ingress_class_name" {
 }
 
 variable "argo_cd_domain_name" {
-  default = "example.com"
+  default = "<your-domain.com>"
 }
 
 variable "argo_cd_subdomain_name" {
-  default = "sub"
+  default = "<your-subdomain>"
 }
 
 variable "lets_encrypt_issuer_name" {
@@ -60,16 +60,18 @@ variable "github_secret" {
   description = "GitHub secret for accessing the repository"
   type        = string
   default     = null
+  sensitive   = true
 }
 
 variable "github_key" {
   description = "GitHub key for accessing the repository"
   type        = string
   default     = null
+  sensitive   = true
 }
 
 variable "github_org" {
-  default     = "example-org"
+  default     = "<your-github-org-name>"
   type        = string
   description = "Name of your organization as shown in the GitHub URL path"
 }

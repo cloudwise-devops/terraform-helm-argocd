@@ -30,15 +30,15 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.6.5"` | no |
-| <a name="input_argo_cd_domain_name"></a> [argo\_cd\_domain\_name](#input\_argo\_cd\_domain\_name) | n/a | `string` | `"example.com"` | no |
+| <a name="input_argo_cd_domain_name"></a> [argo\_cd\_domain\_name](#input\_argo\_cd\_domain\_name) | n/a | `string` | `"<your-domain.com>"` | no |
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
-| <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | n/a | `string` | `"sub"` | no |
+| <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | n/a | `string` | `"<your-subdomain>"` | no |
 | <a name="input_argocd_ip_whitelist"></a> [argocd\_ip\_whitelist](#input\_argocd\_ip\_whitelist) | n/a | `string` | `"0.0.0.0/0"` | no |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | `"dev"` | no |
 | <a name="input_gce_project"></a> [gce\_project](#input\_gce\_project) | n/a | `string` | `"<your-project>"` | no |
 | <a name="input_gce_zone"></a> [gce\_zone](#input\_gce\_zone) | n/a | `string` | `"<your-zone>"` | no |
 | <a name="input_github_key"></a> [github\_key](#input\_github\_key) | GitHub key for accessing the repository | `string` | `null` | no |
-| <a name="input_github_org"></a> [github\_org](#input\_github\_org) | Name of your organization as shown in the GitHub URL path | `string` | `"example-org"` | no |
+| <a name="input_github_org"></a> [github\_org](#input\_github\_org) | Name of your organization as shown in the GitHub URL path | `string` | `"<your-github-org-name>"` | no |
 | <a name="input_github_secret"></a> [github\_secret](#input\_github\_secret) | GitHub secret for accessing the repository | `string` | `null` | no |
 | <a name="input_gke_cluster_name"></a> [gke\_cluster\_name](#input\_gke\_cluster\_name) | n/a | `string` | `"<your-cluster-name>"` | no |
 | <a name="input_google_credentials"></a> [google\_credentials](#input\_google\_credentials) | n/a | `string` | `"/tmp/gcloud_credentials.json"` | no |
