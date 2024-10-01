@@ -34,6 +34,7 @@ No requirements.
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
 | <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | n/a | `string` | `"<your-subdomain>"` | no |
 | <a name="input_argocd_ip_whitelist"></a> [argocd\_ip\_whitelist](#input\_argocd\_ip\_whitelist) | n/a | `string` | `"0.0.0.0/0"` | no |
+| <a name="input_enable_web_terminal"></a> [enable\_web\_terminal](#input\_enable\_web\_terminal) | Whether to enable web terminal on ArgoCD console | `bool` | `false` | no |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | `"dev"` | no |
 | <a name="input_gce_project"></a> [gce\_project](#input\_gce\_project) | n/a | `string` | `"<your-project>"` | no |
 | <a name="input_gce_zone"></a> [gce\_zone](#input\_gce\_zone) | n/a | `string` | `"<your-zone>"` | no |
@@ -46,7 +47,6 @@ No requirements.
 | <a name="input_lets_encrypt_issuer_name"></a> [lets\_encrypt\_issuer\_name](#input\_lets\_encrypt\_issuer\_name) | n/a | `string` | `"<your-issuer>"` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | n/a | `string` | `"nginx"` | no |
 | <a name="input_storage_project"></a> [storage\_project](#input\_storage\_project) | n/a | `string` | `"<your-storage-project>"` | no |
-| <a name="input_web_terminal"></a> [web\_terminal](#input\_web\_terminal) | Whether to enable web terminal on ArgoCD console | `bool` | `false` | no |
 
 ## Outputs
 

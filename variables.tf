@@ -76,7 +76,7 @@ variable "github_org" {
   description = "Name of your organization as shown in the GitHub URL path"
 }
 
-variable "web_terminal" {
+variable "enable_web_terminal" {
   default     = false
   type        = bool
   description = "Whether to enable web terminal on ArgoCD console"

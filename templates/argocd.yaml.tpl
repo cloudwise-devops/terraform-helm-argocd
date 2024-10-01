@@ -78,7 +78,7 @@ configs:
   cm:
     url: https://${subdomain}.${domain}
     statusbadge.enabled: true
-    exec.enabled: ${web_terminal}
+    exec.enabled: ${enable_web_terminal}
     dex.config: |
       connectors:
         - type: github
