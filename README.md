@@ -29,7 +29,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.6.5"` | no |
+| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.6.8"` | no |
 | <a name="input_argo_cd_domain_name"></a> [argo\_cd\_domain\_name](#input\_argo\_cd\_domain\_name) | n/a | `string` | `"<your-domain.com>"` | no |
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
 | <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | n/a | `string` | `"<your-subdomain>"` | no |
