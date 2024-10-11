@@ -34,6 +34,8 @@ No requirements.
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
 | <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | n/a | `string` | `"<your-subdomain>"` | no |
 | <a name="input_argocd_ip_whitelist"></a> [argocd\_ip\_whitelist](#input\_argocd\_ip\_whitelist) | n/a | `string` | `"0.0.0.0/0"` | no |
+| <a name="input_client_key"></a> [client\_key](#input\_client\_key) | GitHub key for accessing the repository | `string` | `null` | no |
+| <a name="input_client_secret"></a> [client\_secret](#input\_client\_secret) | GitHub secret for accessing the repository | `string` | `null` | no |
 | <a name="input_enable_web_terminal"></a> [enable\_web\_terminal](#input\_enable\_web\_terminal) | Whether to enable web terminal on ArgoCD console | `bool` | `false` | no |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | `"dev"` | no |
 | <a name="input_gce_project"></a> [gce\_project](#input\_gce\_project) | n/a | `string` | `"<your-project>"` | no |
@@ -45,8 +47,6 @@ No requirements.
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | n/a | `string` | `"nginx"` | no |
 | <a name="input_platform"></a> [platform](#input\_platform) | Choose between 'github' or 'bitbucket-cloud' | `string` | n/a | yes |
 | <a name="input_storage_project"></a> [storage\_project](#input\_storage\_project) | n/a | `string` | `"<your-storage-project>"` | no |
-| <a name="input_vcs_key"></a> [vcs\_key](#input\_vcs\_key) | GitHub key for accessing the repository | `string` | `null` | no |
-| <a name="input_vcs_secret"></a> [vcs\_secret](#input\_vcs\_secret) | GitHub secret for accessing the repository | `string` | `null` | no |
 
 ## Outputs
 

@@ -85,8 +85,8 @@ configs:
           id: ${platform}
           name: ${platform == "github" ? "GitHub" : "bitbucket"}
           config:
-            clientID: ${samlOrgClientId}
-            clientSecret: ${samlOrgSecret}
+            clientID: ${clientID}
+            clientSecret: ${clientSecret}
             redirectURI: https://${subdomain}.${domain}/api/dex/callback
             scopes:
             - email

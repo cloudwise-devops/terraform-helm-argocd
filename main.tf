@@ -24,8 +24,8 @@ resource "helm_release" "argocd" {
         subdomain             = var.argo_cd_subdomain_name
         allowed_ip_to_connect = var.argocd_ip_whitelist
         service_acc_name      = module.my-app-workload-identity.k8s_service_account_name
-        samlOrgSecret         = var.vcs_secret
-        samlOrgClientId       = var.vcs_key
+        clientID              = var.client_key
+        clientSecret          = var.client_secret
         github_org            = var.github_org
         enable_web_terminal   = var.enable_web_terminal
         platform              = var.platform
