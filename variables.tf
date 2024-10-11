@@ -67,9 +67,9 @@ variable "github_key" {
 }
 
 variable "github_org" {
-  default     = "<your-github-org-name>"
+  default     = ""
   type        = string
-  description = "Name of your organization as shown in the GitHub URL path"
+  description = "Name of your organization as shown in the GitHub URL path for ArgoCD Dex authentication."
 }
 
 variable "enable_web_terminal" {
