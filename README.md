@@ -46,6 +46,7 @@ No requirements.
 | <a name="input_google_region"></a> [google\_region](#input\_google\_region) | n/a | `string` | `"<your-region>"` | no |
 | <a name="input_lets_encrypt_issuer_name"></a> [lets\_encrypt\_issuer\_name](#input\_lets\_encrypt\_issuer\_name) | n/a | `string` | `"<your-issuer>"` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | n/a | `string` | `"nginx"` | no |
+| <a name="input_platform"></a> [platform](#input\_platform) | Choose between 'github' or 'bitbucket' | `string` | n/a | yes |
 | <a name="input_storage_project"></a> [storage\_project](#input\_storage\_project) | n/a | `string` | `"<your-storage-project>"` | no |
 
 ## Outputs
