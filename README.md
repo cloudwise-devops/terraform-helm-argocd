@@ -38,15 +38,15 @@ No requirements.
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | `"dev"` | no |
 | <a name="input_gce_project"></a> [gce\_project](#input\_gce\_project) | n/a | `string` | `"<your-project>"` | no |
 | <a name="input_gce_zone"></a> [gce\_zone](#input\_gce\_zone) | n/a | `string` | `"<your-zone>"` | no |
-| <a name="input_github_key"></a> [github\_key](#input\_github\_key) | GitHub key for accessing the repository | `string` | `null` | no |
 | <a name="input_github_org"></a> [github\_org](#input\_github\_org) | Name of your organization as shown in the GitHub URL path for ArgoCD Dex authentication. | `string` | `""` | no |
-| <a name="input_github_secret"></a> [github\_secret](#input\_github\_secret) | GitHub secret for accessing the repository | `string` | `null` | no |
 | <a name="input_gke_cluster_name"></a> [gke\_cluster\_name](#input\_gke\_cluster\_name) | n/a | `string` | `"<your-cluster-name>"` | no |
 | <a name="input_google_region"></a> [google\_region](#input\_google\_region) | n/a | `string` | `"<your-region>"` | no |
 | <a name="input_lets_encrypt_issuer_name"></a> [lets\_encrypt\_issuer\_name](#input\_lets\_encrypt\_issuer\_name) | n/a | `string` | `"<your-issuer>"` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | n/a | `string` | `"nginx"` | no |
 | <a name="input_platform"></a> [platform](#input\_platform) | Choose between 'github' or 'bitbucket-cloud' | `string` | n/a | yes |
 | <a name="input_storage_project"></a> [storage\_project](#input\_storage\_project) | n/a | `string` | `"<your-storage-project>"` | no |
+| <a name="input_vcs_key"></a> [vcs\_key](#input\_vcs\_key) | GitHub key for accessing the repository | `string` | `null` | no |
+| <a name="input_vcs_secret"></a> [vcs\_secret](#input\_vcs\_secret) | GitHub secret for accessing the repository | `string` | `null` | no |
 
 ## Outputs
 

@@ -52,14 +52,14 @@ variable "argo_cd_chart_version" {
   description = "https://artifacthub.io/packages/helm/argo/argo-cd"
 }
 
-variable "github_secret" {
+variable "vcs_secret" {
   description = "GitHub secret for accessing the repository"
   type        = string
   default     = null
   sensitive   = true
 }
 
-variable "github_key" {
+variable "vcs_key" {
   description = "GitHub key for accessing the repository"
   type        = string
   default     = null
