@@ -42,7 +42,6 @@ No requirements.
 | <a name="input_github_org"></a> [github\_org](#input\_github\_org) | Name of your organization as shown in the GitHub URL path | `string` | `"<your-github-org-name>"` | no |
 | <a name="input_github_secret"></a> [github\_secret](#input\_github\_secret) | GitHub secret for accessing the repository | `string` | `null` | no |
 | <a name="input_gke_cluster_name"></a> [gke\_cluster\_name](#input\_gke\_cluster\_name) | n/a | `string` | `"<your-cluster-name>"` | no |
-| <a name="input_google_credentials"></a> [google\_credentials](#input\_google\_credentials) | n/a | `string` | `"/tmp/gcloud_credentials.json"` | no |
 | <a name="input_google_region"></a> [google\_region](#input\_google\_region) | n/a | `string` | `"<your-region>"` | no |
 | <a name="input_lets_encrypt_issuer_name"></a> [lets\_encrypt\_issuer\_name](#input\_lets\_encrypt\_issuer\_name) | n/a | `string` | `"<your-issuer>"` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | n/a | `string` | `"nginx"` | no |

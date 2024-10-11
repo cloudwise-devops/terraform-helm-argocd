@@ -43,10 +43,6 @@ variable "gke_cluster_name" {
   default = "<your-cluster-name>"
 }
 
-variable "google_credentials" {
-  default = "/tmp/gcloud_credentials.json"
-}
-
 variable "google_region" {
   default = "<your-region>"
 }
