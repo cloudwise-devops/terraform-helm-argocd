@@ -43,10 +43,6 @@ variable "gke_cluster_name" {
   default = "<your-cluster-name>"
 }
 
-variable "google_credentials" {
-  default = "/tmp/gcloud_credentials.json"
-}
-
 variable "google_region" {
   default = "<your-region>"
 }
@@ -56,14 +52,14 @@ variable "argo_cd_chart_version" {
   description = "https://artifacthub.io/packages/helm/argo/argo-cd"
 }
 
-variable "github_secret" {
+variable "client_secret" {
   description = "GitHub secret for accessing the repository"
   type        = string
   default     = null
   sensitive   = true
 }
 
-variable "github_key" {
+variable "client_key" {
   description = "GitHub key for accessing the repository"
   type        = string
   default     = null
@@ -71,13 +67,22 @@ variable "github_key" {
 }
 
 variable "github_org" {
-  default     = "<your-github-org-name>"
+  default     = ""
   type        = string
-  description = "Name of your organization as shown in the GitHub URL path"
+  description = "Name of your organization as shown in the GitHub URL path for ArgoCD Dex authentication."
 }
 
 variable "enable_web_terminal" {
   default     = false
   type        = bool
   description = "Whether to enable web terminal on ArgoCD console"
+}
+
+variable "platform" {
+  description = "Choose between 'github' or 'bitbucket-cloud'"
+  type        = string
+  validation {
+    condition     = contains(["github", "bitbucket-cloud"], var.platform)
+    error_message = "Platform must be either 'github' or 'bitbucket-cloud'"
+  }
 }

@@ -81,17 +81,19 @@ configs:
     exec.enabled: ${enable_web_terminal}
     dex.config: |
       connectors:
-        - type: github
-          id: github
-          name: GitHub
+        - type: ${platform}
+          id: ${platform}
+          name: ${platform == "github" ? "GitHub" : "bitbucket"}
           config:
-            clientID: ${samlOrgClientId}
-            clientSecret: ${samlOrgSecret}
+            clientID: ${clientID}
+            clientSecret: ${clientSecret}
             redirectURI: https://${subdomain}.${domain}/api/dex/callback
             scopes:
             - email
             - account
+            %{ if platform == "github" }
             orgs:
             - name: ${github_org}
+            %{ endif }
   rbac:
     policy.default: 'role:admin'
