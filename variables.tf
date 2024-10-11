@@ -79,10 +79,10 @@ variable "enable_web_terminal" {
 }
 
 variable "platform" {
-  description = "Choose between 'github' or 'bitbucket'"
+  description = "Choose between 'github' or 'bitbucket-cloud'"
   type        = string
   validation {
-    condition     = contains(["github", "bitbucket"], var.platform)
-    error_message = "Platform must be either 'github' or 'bitbucket'"
+    condition     = contains(["github", "bitbucket-cloud"], var.platform)
+    error_message = "Platform must be either 'github' or 'bitbucket-cloud'"
   }
 }
