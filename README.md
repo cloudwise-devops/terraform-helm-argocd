@@ -3,6 +3,13 @@
 This module is used to deploy ArgoCD on GKE. It will create a namespace, service account, and deploy ArgoCD using Helm.
 Supported auth platforms are Github and Bitbucket Cloud.
 
+### Dependencies
+
+This module in order to work properly it requires the following components:
+- Nginx ingress
+- Cert manager
+- [Optional] External DNS
+
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
