@@ -34,15 +34,9 @@ resource "helm_release" "argocd" {
   ]
 }
 
-resource "google_project_iam_member" "storage_access_for_sa" {
-  project = var.storage_project
-  role    = "roles/storage.objectViewer"
-  member  = "serviceAccount:${module.my-app-workload-identity.gcp_service_account_email}"
-}
-
 module "my-app-workload-identity" {
   source                          = "terraform-google-modules/kubernetes-engine/google//modules/workload-identity"
-  version                         = "30.2.0"
+  version                         = "33.1.0"
   use_existing_gcp_sa             = false
   name                            = "${var.argo_cd_namespace_name}-${var.env}"
   project_id                      = var.gce_project

@@ -1,18 +1,23 @@
 
 variable "nginx_ingress_class_name" {
-  default = "nginx"
+  default     = "nginx"
+  type        = string
+  description = "nginx ingress controller class name"
 }
 
 variable "argo_cd_domain_name" {
-  default = "<your-domain.com>"
+  type        = string
+  description = "domain name for ArgoCD"
 }
 
 variable "argo_cd_subdomain_name" {
-  default = "<your-subdomain>"
+  default     = "argocd"
+  type        = string
+  description = "subdomain name for ArgoCD"
 }
 
 variable "lets_encrypt_issuer_name" {
-  default = "<your-issuer>"
+  default = "cloudflare-issuer"
 }
 
 variable "argo_cd_namespace_name" {
@@ -28,24 +33,10 @@ variable "env" {
 }
 
 variable "gce_project" {
-  default = "<your-project>"
+  type        = string
+  description = "The GCP project ID where the resources will be created"
 }
 
-variable "gce_zone" {
-  default = "<your-zone>"
-}
-
-variable "storage_project" {
-  default = "<your-storage-project>"
-}
-
-variable "gke_cluster_name" {
-  default = "<your-cluster-name>"
-}
-
-variable "google_region" {
-  default = "<your-region>"
-}
 
 variable "argo_cd_chart_version" {
   default     = "7.6.12"
@@ -53,23 +44,23 @@ variable "argo_cd_chart_version" {
 }
 
 variable "client_secret" {
-  description = "GitHub secret for accessing the repository"
+  description = "GitHub or Bitbucket secret for accessing the repository"
   type        = string
   default     = null
   sensitive   = true
 }
 
 variable "client_key" {
-  description = "GitHub key for accessing the repository"
+  description = "GitHub or Bitbucket key for accessing the repository"
   type        = string
   default     = null
   sensitive   = true
 }
 
 variable "github_org" {
-  default     = ""
+  default     = null
   type        = string
-  description = "Name of your organization as shown in the GitHub URL path for ArgoCD Dex authentication."
+  description = "For Github: name of your organization as shown in the GitHub URL path for ArgoCD Dex authentication."
 }
 
 variable "enable_web_terminal" {
