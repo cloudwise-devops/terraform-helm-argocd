@@ -1,16 +1,3 @@
-## General
-
-This module is used to deploy ArgoCD on GKE. It will create a namespace, service account, and deploy ArgoCD using Helm.
-Supported auth platforms are Github and Bitbucket Cloud.
-
-### Dependencies
-
-This module in order to work properly it requires the following components:
-- Nginx ingress
-- Cert manager
-- [Optional] External DNS
-
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -40,7 +27,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.6.12"` | no |
+| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.7.1"` | no |
 | <a name="input_argo_cd_domain_name"></a> [argo\_cd\_domain\_name](#input\_argo\_cd\_domain\_name) | domain name for ArgoCD | `string` | n/a | yes |
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
 | <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | subdomain name for ArgoCD | `string` | `"argocd"` | no |
