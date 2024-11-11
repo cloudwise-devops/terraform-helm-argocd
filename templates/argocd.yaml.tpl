@@ -13,6 +13,10 @@ controller:
   serviceAccount:
     create: false
     name: ${service_acc_name}
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
 repoServer:
   serviceAccount:
     create: false
