@@ -58,6 +58,10 @@ repoServer:
     - emptyDir: {}
       name: docker-config
 server:
+  metrics:
+    enabled: ${metrics}
+    serviceMonitor:
+      enabled: ${metrics}
   serviceAccount:
     create: false
     name: ${service_acc_name}
