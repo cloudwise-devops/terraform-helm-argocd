@@ -29,6 +29,7 @@ resource "helm_release" "argocd" {
         github_org            = var.github_org
         enable_web_terminal   = var.enable_web_terminal
         platform              = var.platform
+        metrics               = var.metrics_enabled
       }
     )
   ]

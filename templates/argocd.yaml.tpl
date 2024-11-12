@@ -9,23 +9,19 @@ dex:
   serviceAccount:
     create: false
     name: ${service_acc_name}
-  metrics:
-    enabled: true
-    serviceMonitor:
-      enabled: true
 controller:
   serviceAccount:
     create: false
     name: ${service_acc_name}
   metrics:
-    enabled: true
+    enabled: ${metrics}
     serviceMonitor:
-      enabled: true
+      enabled: ${metrics}
 repoServer:
   metrics:
-    enabled: true
+    enabled: ${metrics}
     serviceMonitor:
-      enabled: true
+      enabled: ${metrics}
   serviceAccount:
     create: false
     name: ${service_acc_name}
@@ -62,10 +58,6 @@ repoServer:
     - emptyDir: {}
       name: docker-config
 server:
-  metrics:
-    enabled: true
-    serviceMonitor:
-      enabled: true
   serviceAccount:
     create: false
     name: ${service_acc_name}

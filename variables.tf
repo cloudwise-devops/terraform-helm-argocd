@@ -77,3 +77,9 @@ variable "platform" {
     error_message = "Platform must be either 'github' or 'bitbucket-cloud'"
   }
 }
+
+variable "metrics_enabled" {
+  default     = false
+  type        = bool
+  description = "Enables Prometheus monitoring."
+}
