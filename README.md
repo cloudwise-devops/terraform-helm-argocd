@@ -27,7 +27,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.7.1"` | no |
+| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.7.3"` | no |
 | <a name="input_argo_cd_domain_name"></a> [argo\_cd\_domain\_name](#input\_argo\_cd\_domain\_name) | domain name for ArgoCD | `string` | n/a | yes |
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
 | <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | subdomain name for ArgoCD | `string` | `"argocd"` | no |
@@ -39,6 +39,7 @@ No requirements.
 | <a name="input_gce_project"></a> [gce\_project](#input\_gce\_project) | The GCP project ID where the resources will be created | `string` | n/a | yes |
 | <a name="input_github_org"></a> [github\_org](#input\_github\_org) | For Github: name of your organization as shown in the GitHub URL path for ArgoCD Dex authentication. | `string` | `null` | no |
 | <a name="input_lets_encrypt_issuer_name"></a> [lets\_encrypt\_issuer\_name](#input\_lets\_encrypt\_issuer\_name) | n/a | `string` | `"cloudflare-issuer"` | no |
+| <a name="input_metrics_enabled"></a> [metrics\_enabled](#input\_metrics\_enabled) | Enables Prometheus monitoring. | `bool` | `false` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | nginx ingress controller class name | `string` | `"nginx"` | no |
 | <a name="input_platform"></a> [platform](#input\_platform) | Choose between 'github' or 'bitbucket-cloud' | `string` | n/a | yes |
 
