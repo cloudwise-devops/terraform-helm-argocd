@@ -83,3 +83,9 @@ variable "metrics_enabled" {
   type        = bool
   description = "Enables Prometheus monitoring."
 }
+
+variable "alerts_enabled" {
+  default     = false
+  type        = bool
+  description = "Enables Prometheus monitoring."
+}
