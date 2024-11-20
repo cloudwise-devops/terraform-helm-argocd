@@ -89,3 +89,15 @@ variable "alerts_enabled" {
   type        = bool
   description = "Enables Prometheus monitoring."
 }
+
+variable "prometheus_release" {
+  default     = "prometheus-community"
+  type        = string
+  description = "Prometheus release name which alert will be attached."
+}
+
+variable "degraded_app_treshold" {
+  default     = "0"
+  type        = string
+  description = "Degraded app level in argoCD installation."
+}

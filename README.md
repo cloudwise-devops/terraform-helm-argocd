@@ -36,6 +36,7 @@ No requirements.
 | <a name="input_argocd_ip_whitelist"></a> [argocd\_ip\_whitelist](#input\_argocd\_ip\_whitelist) | n/a | `string` | `"0.0.0.0/0"` | no |
 | <a name="input_client_key"></a> [client\_key](#input\_client\_key) | GitHub or Bitbucket key for accessing the repository | `string` | `null` | no |
 | <a name="input_client_secret"></a> [client\_secret](#input\_client\_secret) | GitHub or Bitbucket secret for accessing the repository | `string` | `null` | no |
+| <a name="input_degraded_app_treshold"></a> [degraded\_app\_treshold](#input\_degraded\_app\_treshold) | Degraded app level in argoCD installation. | `string` | `"0"` | no |
 | <a name="input_enable_web_terminal"></a> [enable\_web\_terminal](#input\_enable\_web\_terminal) | Whether to enable web terminal on ArgoCD console | `bool` | `false` | no |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | `"dev"` | no |
 | <a name="input_gce_project"></a> [gce\_project](#input\_gce\_project) | The GCP project ID where the resources will be created | `string` | n/a | yes |
@@ -44,6 +45,7 @@ No requirements.
 | <a name="input_metrics_enabled"></a> [metrics\_enabled](#input\_metrics\_enabled) | Enables Prometheus monitoring. | `bool` | `false` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | nginx ingress controller class name | `string` | `"nginx"` | no |
 | <a name="input_platform"></a> [platform](#input\_platform) | Choose between 'github' or 'bitbucket-cloud' | `string` | n/a | yes |
+| <a name="input_prometheus_release"></a> [prometheus\_release](#input\_prometheus\_release) | Prometheus release name which alert will be attached. | `string` | `"prometheus-community"` | no |
 
 ## Outputs
 

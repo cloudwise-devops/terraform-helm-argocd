@@ -7,8 +7,7 @@ resource "kubernetes_manifest" "argocd_app_health_alert" {
       "name"      = "argocd-degraded-app-alert"
       "namespace" = "${var.argo_cd_namespace_name}"
       "labels" = {
-        "app"     = "kube-prometheus-stack"
-        "release" = "prometheus-community"
+        "release" = "${var.prometheus_release}"
       }
     }
     "spec" = {
@@ -18,14 +17,15 @@ resource "kubernetes_manifest" "argocd_app_health_alert" {
           "rules" = [
             {
               "alert" = "ArgoCDDegradedApp"
-              "expr"  = "sum(argocd_app_info{namespace=~\"argocd\",health_status=\"Degraded\"}) > 0"
+              "expr"  = "sum(argocd_app_info{namespace=~\"argocd\",health_status=\"Degraded\"}) > ${var.degraded_app_treshold}"
               "for"   = "5m"
               "labels" = {
                 "severity" = "critical"
               }
               "annotations" = {
                 "summary"     = "ArgoCD Degraded App Alert"
-                "description" = "ArgoCD applications are degraded in ${var.argo_cd_subdomain_name}.${var.argo_cd_domain_name}/applications?health=Degraded."
+                "description" = "More than ${var.degraded_app_treshold} ArgoCD applications found degraded here: <https://{{ .Labels.argo_cd_subdomain_name }}.{{ .Labels.argo_cd_domain_name }}/applications?health=Degraded|{{ .Labels.argo_cd_subdomain_name }}.{{ .Labels.argo_cd_domain_name }}>."
+
               }
             }
           ]
