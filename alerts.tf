@@ -24,7 +24,7 @@ resource "kubernetes_manifest" "argocd_app_health_alert" {
               }
               "annotations" = {
                 "summary"     = "ArgoCD Degraded App Alert"
-                "description" = "More than ${var.degraded_app_treshold} ArgoCD applications found degraded here: <${var.argo_cd_subdomain_name}.${var.argo_cd_domain_name}/applications?health=Degraded | ${var.argo_cd_subdomain_name}.${var.argo_cd_domain_name}>."
+                "description" = "More than ${var.degraded_app_treshold} ArgoCD applications found degraded here: <https://${var.argo_cd_subdomain_name}.${var.argo_cd_domain_name}/applications?health=Degraded | ${var.argo_cd_subdomain_name}.${var.argo_cd_domain_name}>."
               }
             }
           ]
