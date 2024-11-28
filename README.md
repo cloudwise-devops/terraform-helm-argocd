@@ -8,7 +8,7 @@ No requirements.
 | Name | Version |
 |------|---------|
 | <a name="provider_helm"></a> [helm](#provider\_helm) | 2.16.1 |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.33.0 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.34.0 |
 
 ## Modules
 
@@ -46,6 +46,7 @@ No requirements.
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | nginx ingress controller class name | `string` | `"nginx"` | no |
 | <a name="input_platform"></a> [platform](#input\_platform) | Choose between 'github' or 'bitbucket-cloud' | `string` | n/a | yes |
 | <a name="input_prometheus_release"></a> [prometheus\_release](#input\_prometheus\_release) | Prometheus release name which alert will be attached. | `string` | `"prometheus-community"` | no |
+| <a name="input_service_acc_name"></a> [service\_acc\_name](#input\_service\_acc\_name) | Service account for ArgoCD to use. | `string` | `null` | no |
 
 ## Outputs
 
@@ -54,4 +55,5 @@ No requirements.
 | <a name="output_argocd_gcp_iam_service_account_email"></a> [argocd\_gcp\_iam\_service\_account\_email](#output\_argocd\_gcp\_iam\_service\_account\_email) | n/a |
 | <a name="output_argocd_gcp_iam_service_account_name"></a> [argocd\_gcp\_iam\_service\_account\_name](#output\_argocd\_gcp\_iam\_service\_account\_name) | n/a |
 | <a name="output_argocd_kubernetes_namespace"></a> [argocd\_kubernetes\_namespace](#output\_argocd\_kubernetes\_namespace) | n/a |
+| <a name="output_service_acc_name"></a> [service\_acc\_name](#output\_service\_acc\_name) | n/a |
 <!-- END_TF_DOCS -->

@@ -102,13 +102,8 @@ variable "degraded_app_treshold" {
   description = "Degraded app level in argoCD installation."
 }
 
-variable "create_new_sa" {
-  default     = true
-  type        = bool
-  description = "Creates new service account for ArgoCD."
-}
-
 variable "service_acc_name" {
-  default = module.my-app-workload-identity.k8s_service_account_name
+  type        = string
+  default     = null
   description = "Service account for ArgoCD to use."
 }
