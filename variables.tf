@@ -102,8 +102,8 @@ variable "degraded_app_treshold" {
   description = "Degraded app level in argoCD installation."
 }
 
-variable "service_acc_name" {
+variable "service_account_name" {
   type        = string
   default     = null
-  description = "Service account for ArgoCD to use."
+  description = "Service account name for ArgoCD to use."
 }
