@@ -23,7 +23,7 @@ resource "helm_release" "argocd" {
         domain                = var.argo_cd_domain_name
         subdomain             = var.argo_cd_subdomain_name
         allowed_ip_to_connect = var.argocd_ip_whitelist
-        service_acc_name      = module.my-app-workload-identity.k8s_service_account_name
+        service_acc_name      = var.service_acc_name
         clientID              = var.client_key
         clientSecret          = var.client_secret
         github_org            = var.github_org
@@ -36,6 +36,7 @@ resource "helm_release" "argocd" {
 }
 
 module "my-app-workload-identity" {
+  count = var.create_new_sa ? 1 : 0
   source                          = "terraform-google-modules/kubernetes-engine/google//modules/workload-identity"
   version                         = "33.1.0"
   use_existing_gcp_sa             = false
