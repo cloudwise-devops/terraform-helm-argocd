@@ -1,4 +1,3 @@
-{* https://artifacthub.io/packages/helm/argo/argo-cd *}
 global:
   domain: ${subdomain}.${domain}
   nodeSelector:
