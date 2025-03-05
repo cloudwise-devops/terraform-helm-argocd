@@ -107,3 +107,8 @@ variable "service_account_name" {
   default     = null
   description = "Service account name for ArgoCD to use."
 }
+
+variable "node_type" {
+  default     = "any"
+  description = "Nodes provisioning where to deploy ArgoCD (standard, spot, preemptible)"
+}

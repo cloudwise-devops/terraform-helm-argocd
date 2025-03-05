@@ -1,5 +1,11 @@
+{* https://artifacthub.io/packages/helm/argo/argo-cd *}
 global:
   domain: ${subdomain}.${domain}
+  nodeSelector:
+    kubernetes.io/os: linux
+    %{ if node_type != "any" }
+    cloud.google.com/gke-provisioning: ${node_type}
+    %{ endif }
   securityContext:
     fsGroup: 999
     runAsUser: 999

@@ -29,6 +29,7 @@ resource "helm_release" "argocd" {
         enable_web_terminal   = var.enable_web_terminal
         platform              = var.platform
         metrics               = var.metrics_enabled
+        node_type             = var.node_type
       }
     )
   ]
