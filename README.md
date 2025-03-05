@@ -29,7 +29,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_alerts_enabled"></a> [alerts\_enabled](#input\_alerts\_enabled) | Enables Prometheus monitoring. | `bool` | `false` | no |
-| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.8.7"` | no |
+| <a name="input_argo_cd_chart_version"></a> [argo\_cd\_chart\_version](#input\_argo\_cd\_chart\_version) | https://artifacthub.io/packages/helm/argo/argo-cd | `string` | `"7.8.8"` | no |
 | <a name="input_argo_cd_domain_name"></a> [argo\_cd\_domain\_name](#input\_argo\_cd\_domain\_name) | domain name for ArgoCD | `string` | n/a | yes |
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
 | <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | subdomain name for ArgoCD | `string` | `"argocd"` | no |
@@ -44,6 +44,7 @@ No requirements.
 | <a name="input_lets_encrypt_issuer_name"></a> [lets\_encrypt\_issuer\_name](#input\_lets\_encrypt\_issuer\_name) | n/a | `string` | `"cloudflare-issuer"` | no |
 | <a name="input_metrics_enabled"></a> [metrics\_enabled](#input\_metrics\_enabled) | Enables Prometheus monitoring. | `bool` | `false` | no |
 | <a name="input_nginx_ingress_class_name"></a> [nginx\_ingress\_class\_name](#input\_nginx\_ingress\_class\_name) | nginx ingress controller class name | `string` | `"nginx"` | no |
+| <a name="input_node_type"></a> [node\_type](#input\_node\_type) | Nodes provisioning where to deploy ArgoCD (standard, spot, preemptible) | `string` | `"any"` | no |
 | <a name="input_platform"></a> [platform](#input\_platform) | Choose between 'github' or 'bitbucket-cloud' | `string` | n/a | yes |
 | <a name="input_prometheus_release"></a> [prometheus\_release](#input\_prometheus\_release) | Prometheus release name which alert will be attached. | `string` | `"prometheus-community"` | no |
 | <a name="input_service_account_name"></a> [service\_account\_name](#input\_service\_account\_name) | Service account name for ArgoCD to use. | `string` | `null` | no |
