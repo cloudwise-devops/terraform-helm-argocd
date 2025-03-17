@@ -39,7 +39,7 @@ variable "gce_project" {
 
 
 variable "argo_cd_chart_version" {
-  default     = "7.8.9"
+  default     = "7.8.11"
   description = "https://artifacthub.io/packages/helm/argo/argo-cd"
 }
 
