@@ -34,6 +34,9 @@ No requirements.
 | <a name="input_argo_cd_namespace_name"></a> [argo\_cd\_namespace\_name](#input\_argo\_cd\_namespace\_name) | n/a | `string` | `"argocd"` | no |
 | <a name="input_argo_cd_subdomain_name"></a> [argo\_cd\_subdomain\_name](#input\_argo\_cd\_subdomain\_name) | subdomain name for ArgoCD | `string` | `"argocd"` | no |
 | <a name="input_argocd_ip_whitelist"></a> [argocd\_ip\_whitelist](#input\_argocd\_ip\_whitelist) | n/a | `string` | `"0.0.0.0/0"` | no |
+| <a name="input_ci-cd-pass-bcrypt-hash"></a> [ci-cd-pass-bcrypt-hash](#input\_ci-cd-pass-bcrypt-hash) | Password bcrypt hash for ci-cd user ('Aut0mat10n' By default) | `string` | `"$2a$12$Q8InpbAXYwSjtCYpgc7nyeyykrozBMCTSTxZVZ2HCVSgnUPUEwBDm"` | no |
+| <a name="input_ci-cd-user-enabled"></a> [ci-cd-user-enabled](#input\_ci-cd-user-enabled) | Activation of ci-cd-user account | `bool` | `false` | no |
+| <a name="input_ci-cd-user-name"></a> [ci-cd-user-name](#input\_ci-cd-user-name) | Name of ci-cd user account with sync priveleges | `string` | `"ci-cd-user"` | no |
 | <a name="input_client_key"></a> [client\_key](#input\_client\_key) | GitHub or Bitbucket key for accessing the repository | `string` | `null` | no |
 | <a name="input_client_secret"></a> [client\_secret](#input\_client\_secret) | GitHub or Bitbucket secret for accessing the repository | `string` | `null` | no |
 | <a name="input_degraded_app_treshold"></a> [degraded\_app\_treshold](#input\_degraded\_app\_treshold) | Degraded app level in argoCD installation. | `string` | `"0"` | no |

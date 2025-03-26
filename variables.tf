@@ -112,3 +112,19 @@ variable "node_type" {
   default     = "any"
   description = "Nodes provisioning where to deploy ArgoCD (standard, spot, preemptible)"
 }
+
+variable "ci-cd-user-enabled" {
+  default     = false
+  type        = bool
+  description = "Activation of ci-cd-user account"
+}
+
+variable "ci-cd-user-name" {
+  default     = "ci-cd-user"
+  description = "Name of ci-cd user account with sync priveleges"
+}
+
+variable "ci-cd-pass-bcrypt-hash" {
+  default     = "$2a$12$Q8InpbAXYwSjtCYpgc7nyeyykrozBMCTSTxZVZ2HCVSgnUPUEwBDm"
+  description = "Password bcrypt hash for ci-cd user ('Aut0mat10n' By default)"
+}

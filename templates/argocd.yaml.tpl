@@ -96,6 +96,8 @@ configs:
     url: https://${subdomain}.${domain}
     statusbadge.enabled: true
     exec.enabled: ${enable_web_terminal}
+    accounts.${ci-cd-user-name}: login
+    accounts.${ci-cd-user-name}.enabled: ${ci-cd-user-enabled}
     dex.config: |
       connectors:
         - type: ${platform}
@@ -114,3 +116,10 @@ configs:
             %{ endif }
   rbac:
     policy.default: 'role:admin'
+    policy.csv: |
+      p, role:syncer, applications, sync, *, allow
+      p, role:syncer, applications, update, *, allow
+      g, ${ci-cd-user-name}, role:syncer
+  secret:
+    extra:
+      accounts.${ci-cd-user-name}.password: ${ci-cd-pass-bcrypt-hash}

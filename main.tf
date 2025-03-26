@@ -17,19 +17,22 @@ resource "helm_release" "argocd" {
   values = [
     templatefile("${path.module}/templates/argocd.yaml.tpl",
       {
-        ingress_class         = var.nginx_ingress_class_name
-        lets_encrypt_issuer   = var.lets_encrypt_issuer_name
-        domain                = var.argo_cd_domain_name
-        subdomain             = var.argo_cd_subdomain_name
-        allowed_ip_to_connect = var.argocd_ip_whitelist
-        service_acc_name      = module.my-app-workload-identity.k8s_service_account_name
-        clientID              = var.client_key
-        clientSecret          = var.client_secret
-        github_org            = var.github_org
-        enable_web_terminal   = var.enable_web_terminal
-        platform              = var.platform
-        metrics               = var.metrics_enabled
-        node_type             = var.node_type
+        ingress_class          = var.nginx_ingress_class_name
+        lets_encrypt_issuer    = var.lets_encrypt_issuer_name
+        domain                 = var.argo_cd_domain_name
+        subdomain              = var.argo_cd_subdomain_name
+        allowed_ip_to_connect  = var.argocd_ip_whitelist
+        service_acc_name       = module.my-app-workload-identity.k8s_service_account_name
+        clientID               = var.client_key
+        clientSecret           = var.client_secret
+        github_org             = var.github_org
+        enable_web_terminal    = var.enable_web_terminal
+        platform               = var.platform
+        metrics                = var.metrics_enabled
+        node_type              = var.node_type
+        ci-cd-user-enabled     = var.ci-cd-user-enabled
+        ci-cd-user-name        = var.ci-cd-user-name
+        ci-cd-pass-bcrypt-hash = var.ci-cd-pass-bcrypt-hash
       }
     )
   ]
